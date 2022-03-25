@@ -1,3 +1,5 @@
 export const NewProducts = () => {
-  return <div>List of new products</div>
+    return(
+        <div>List of new products</div>
+    )
 }

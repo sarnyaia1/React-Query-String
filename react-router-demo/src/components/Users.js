@@ -1,37 +1,41 @@
-import { Outlet, useSearchParams } from 'react-router-dom'
+import { Outlet, useSearchParams } from "react-router-dom";
 
 export const Users = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
-  const showActiverUsers = searchParams.get('filter') === 'active'
 
-  return (
-    <>
-      <div>
-        <div>User 1</div>
-        <div>User 2</div>
-        <div>User 3</div>
-        <h2>User Activity</h2>
-        <button onClick={() => setSearchParams({ filter: 'active' })}>
-          Active Users
-        </button>
-        <button onClick={() => setSearchParams({ filter: 'offline' })}>
-          Offline Users
-        </button>
-        <br />
-        <br />
-        <button onClick={() => setSearchParams({})}>Reset Filters</button>
-      </div>
-      <br />
-      <br />
-      <h4>Share the link with your friends: 
-        
-        {showActiverUsers ? 
-        (<a href="http://localhost:3000/users?filter=active">Online users</a>) : 
-        (<a href="http://localhost:3000/users?filter=offline">Offline users</a>)
-        }
-      </h4>
-      
-    </>
- 
-  )
+    const [searchParams, setSearchParams] = useSearchParams();
+    const showActiveUsers = searchParams.get('filter') === 'active';
+
+    return(
+        <>
+            <div>
+                <h3>User 1</h3>
+                <h3>User 2</h3>
+                <h3>User 3</h3>
+            </div>
+            <Outlet />
+            <div>
+                User Activity: 
+                <button onClick={() => setSearchParams({filter: 'active'})}>Active users</button>
+                <button onClick={() => setSearchParams({filter: 'offline'})}>Offline users</button>
+            </div>
+            <div>
+                User Membership: 
+                <button onClick={() => setSearchParams({filter: 'active', membership: 'normal'})}>Normal membership</button>
+                <button onClick={() => setSearchParams({filter: 'active', membership: 'premium'})}>Premium membership</button>
+            </div>
+            <div>
+           
+            </div>
+            <br />
+            <div>
+                <h2>Saved search path:</h2> 
+                {
+                    showActiveUsers ? (<h3>Showing active users</h3>) : (<h3>Showing offline users</h3>)
+                }
+                http://localhost:3000/users?{searchParams.toString()}
+                
+            </div>
+        </>
+
+    )
 }

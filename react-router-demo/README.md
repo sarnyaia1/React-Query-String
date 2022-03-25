@@ -1,20 +1,49 @@
-# URL custom spike
+# React router basics
 
-- Url-t hogyan tudunk módosítani az oldal újratöltése nélkül
-- Minden művelet kerüljön bele az url-be, ami alapján az adott url megnyitásával az az állapot álljon elő más helyen, más gépen is
+## What is it about?
 
-## Tesproject2: Search Parameters Users
+- Configure Routes
+- Links (NavLink)
+- Active links (useNavigate)
+- No Match Route
+- Nested Routes (Outlet)
+- Index Route
+- Dynamic Routes
+- URL Params (useParams)
+- Search Params (useSearchparams)
+- Realative Links
+- Lazy Loading
+
+
+## Install yarn, Create yarn project, start yarn project
+
+```
+npm install -global yarn
+
+yarn create react-app testproject
 
 ```
 
-yarn
+## Add Components
 
+```
+yarn add react-reouter-dom@6
+```
+
+## Start and test 
+
+```
 yarn start
-
 ```
 
-A felhasználó típusokra kattintva megjelenik az URL-ben a felhasználó típus paramétrként, illetve mentésre kerül a hozzá tartozó link, mellyel a mentett paraméterekkel betölthető az oldal.
+OR
 
-## First look
+https://react-router-basics.netlify.app/
 
-[!This is an img](screendshot.png)
+
+## First Look:
+
+![This is an image](screenshot.png)
+
+
+

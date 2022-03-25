@@ -1,3 +1,7 @@
 export const Admin = () => {
-  return <div>Admin user</div>
+    return(
+        <div>
+            Admin Page
+        </div>
+    )
 }
